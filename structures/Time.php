@@ -15,7 +15,7 @@ namespace Bolt\structures;
  * @link https://github.com/stefanak-michal/Bolt
  * @package Bolt\structures
  */
-class Time
+class Time implements IStructure
 {
     /**
      * @var int
@@ -54,6 +54,11 @@ class Time
     public function tz_offset_seconds(): int
     {
         return $this->tz_offset_seconds;
+    }
+
+    public function __toString(): string
+    {
+        return strtotime('today') + $this->nanoseconds / 1000000000;
     }
 
 }

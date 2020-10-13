@@ -12,7 +12,7 @@ namespace Bolt\structures;
  * @link https://github.com/stefanak-michal/Bolt
  * @package Bolt\structures
  */
-class Duration
+class Duration implements IStructure
 {
 
     /**
@@ -80,6 +80,11 @@ class Duration
     public function nanoseconds(): int
     {
         return $this->nanoseconds;
+    }
+
+    public function __toString(): string
+    {
+        throw new \Exception("Not implemented");
     }
 
 }

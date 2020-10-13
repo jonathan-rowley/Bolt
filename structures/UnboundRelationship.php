@@ -10,7 +10,7 @@ namespace Bolt\structures;
  * @link https://github.com/stefanak-michal/Bolt
  * @package Bolt\structures
  */
-class UnboundRelationship
+class UnboundRelationship implements IStructure
 {
     /**
      * @var int
@@ -61,4 +61,10 @@ class UnboundRelationship
     {
         return $this->properties;
     }
+
+    public function __toString(): string
+    {
+        throw new \Exception("Not implemented");
+    }
+
 }

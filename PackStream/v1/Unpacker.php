@@ -15,7 +15,8 @@ use Bolt\structures\{
     LocalDateTime,
     Duration,
     Point2D,
-    Point3D
+    Point3D,
+    IStructure
 };
 use Bolt\PackStream\IUnpacker;
 use Exception;
@@ -180,10 +181,10 @@ class Unpacker implements IUnpacker
      * @param bool $result
      * @param string $class
      * @param mixed ...$methods
-     * @return mixed
+     * @return IStructure
      * @throws Exception
      */
-    private function unpackSpecificStructure(bool &$result, string $class, ...$methods)
+    private function unpackSpecificStructure(bool &$result, string $class, ...$methods): IStructure
     {
         $output = [];
         foreach ($methods as $method) {

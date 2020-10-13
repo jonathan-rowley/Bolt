@@ -16,7 +16,7 @@ namespace Bolt\structures;
  * @link https://github.com/stefanak-michal/Bolt
  * @package Bolt\structures
  */
-class DateTime
+class DateTime implements IStructure
 {
 
     /**
@@ -71,6 +71,11 @@ class DateTime
     public function tz_offset_seconds(): int
     {
         return $this->tz_offset_seconds;
+    }
+
+    public function __toString(): string
+    {
+        return strtotime('+' . $this->seconds . ' seconds', 0);
     }
 
 }

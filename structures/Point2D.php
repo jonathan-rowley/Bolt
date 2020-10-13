@@ -12,7 +12,7 @@ namespace Bolt\structures;
  * @link https://github.com/stefanak-michal/Bolt
  * @package Bolt\structures
  */
-class Point2D
+class Point2D implements IStructure
 {
     /**
      * @var int
@@ -65,6 +65,11 @@ class Point2D
     public function y(): float
     {
         return $this->y;
+    }
+
+    public function __toString(): string
+    {
+        throw new \Exception("Not implemented");
     }
 
 }

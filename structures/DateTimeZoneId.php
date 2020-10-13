@@ -16,7 +16,7 @@ namespace Bolt\structures;
  * @link https://github.com/stefanak-michal/Bolt
  * @package Bolt\structures
  */
-class DateTimeZoneId
+class DateTimeZoneId implements IStructure
 {
 
     /**
@@ -71,6 +71,11 @@ class DateTimeZoneId
     public function tz_id(): int
     {
         return $this->tz_id;
+    }
+
+    public function __toString(): string
+    {
+        throw new \Exception("Not implemented");
     }
 
 }

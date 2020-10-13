@@ -12,7 +12,7 @@ namespace Bolt\structures;
  * @link https://github.com/stefanak-michal/Bolt
  * @package Bolt\structures
  */
-class LocalDateTime
+class LocalDateTime implements IStructure
 {
 
     /**
@@ -51,6 +51,11 @@ class LocalDateTime
     public function nanoseconds(): int
     {
         return $this->nanoseconds;
+    }
+
+    public function __toString(): string
+    {
+        throw new \Exception("Not implemented");
     }
 
 }
